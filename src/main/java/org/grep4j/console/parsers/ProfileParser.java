@@ -2,8 +2,8 @@ package org.grep4j.console.parsers;
 
 import static ch.lambdaj.Lambda.filter;
 import static java.util.Arrays.asList;
+import static org.grep4j.console.matchers.IsAnAccetablepProfile.anAccetableProfile;
 import static org.hamcrest.Matchers.is;
-import static org.grep4j.core.matcher.IsAnAccetablepProfile.anAccetableProfile;
 
 import java.util.List;
 

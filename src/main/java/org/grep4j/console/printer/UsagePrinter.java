@@ -1,11 +1,12 @@
 package org.grep4j.console.printer;
 
+import static org.grep4j.console.persistence.profiles.ProfileEditor.profiles;
+
 import java.io.Console;
 import java.io.PrintWriter;
 import java.util.List;
 
-import static org.grep4j.core.profile.ProfileEditor.profiles;
-import org.grep4j.core.profile.model.Profile;
+import org.grep4j.core.model.Profile;
 
 public class UsagePrinter {
 

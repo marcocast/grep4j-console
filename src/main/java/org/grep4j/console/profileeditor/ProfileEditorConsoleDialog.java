@@ -1,12 +1,13 @@
 package org.grep4j.console.profileeditor;
 
+import static org.grep4j.console.persistence.profiles.ProfileEditor.add;
+import static org.grep4j.console.persistence.profiles.ProfileEditor.getProfile;
+import static org.grep4j.console.persistence.profiles.ProfileEditor.remove;
+import static org.grep4j.console.persistence.profiles.ProfileEditor.update;
+
 import java.io.Console;
 
-import static org.grep4j.core.profile.ProfileEditor.add;
-import static org.grep4j.core.profile.ProfileEditor.remove;
-import static org.grep4j.core.profile.ProfileEditor.getProfile;
-import static org.grep4j.core.profile.ProfileEditor.update;
-import org.grep4j.core.profile.model.Profile;
+import org.grep4j.core.model.Profile;
 
 public abstract class ProfileEditorConsoleDialog {
 

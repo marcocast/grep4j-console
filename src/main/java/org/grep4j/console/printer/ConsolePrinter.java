@@ -1,8 +1,9 @@
 package org.grep4j.console.printer;
 
+import static org.grep4j.console.persistence.profiles.ProfileConfiguration.profileConfiguration;
+
 import java.util.List;
 
-import org.grep4j.core.profile.ProfileConfiguration;
 import org.grep4j.core.task.GrepResult;
 
 public class ConsolePrinter {
@@ -13,7 +14,8 @@ public class ConsolePrinter {
 	public static void printResult(List<GrepResult> results) {
 		for (GrepResult result : results) {
 			System.out.println(AROUND_HEADER + AROUND_HEADER + AROUND_HEADER);
-			System.out.println(AROUND_CONTENT + result.getProfileName() + " {" + result.getFileName() + " [" + hostFor(result) + "]}" + AROUND_CONTENT);
+			System.out.println(AROUND_CONTENT + result.getProfileName() + " {" + result.getFileName() + " [" + hostFor(result) + "]}"
+					+ AROUND_CONTENT);
 			System.out.println(AROUND_HEADER + AROUND_HEADER + AROUND_HEADER);
 			System.out.println(result.getText());
 		}
@@ -21,7 +23,7 @@ public class ConsolePrinter {
 	}
 
 	private static String hostFor(GrepResult result) {
-		return ProfileConfiguration.profileConfiguration().getProfileBy(result.getProfileName()).getServerDetails().getHost();
+		return profileConfiguration().getProfileBy(result.getProfileName()).getServerDetails().getHost();
 	}
 
 }

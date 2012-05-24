@@ -2,7 +2,7 @@ package org.grep4j.console.parsers;
 
 import static ch.lambdaj.Lambda.selectFirst;
 import static java.util.Arrays.asList;
-import static org.grep4j.console.matcher.IsAProfileEditorControl.aProfileEditorControl;
+import static org.grep4j.console.matchers.IsAProfileEditorControl.aProfileEditorControl;
 import static org.hamcrest.Matchers.is;
 
 import org.grep4j.console.ProfileEditorControl;

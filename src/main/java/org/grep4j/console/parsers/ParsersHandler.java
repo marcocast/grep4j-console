@@ -6,8 +6,8 @@ import static ch.lambdaj.Lambda.selectDistinct;
 import java.util.List;
 
 import org.grep4j.console.ProfileEditorControl;
-import org.grep4j.core.converter.ProfileConverter;
-import org.grep4j.core.profile.model.Profile;
+import org.grep4j.console.converters.ProfileConverter;
+import org.grep4j.core.model.Profile;
 
 public class ParsersHandler {
 

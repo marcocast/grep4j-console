@@ -2,8 +2,8 @@ package org.grep4j.console.parsers;
 
 import static ch.lambdaj.Lambda.aggregate;
 
+import org.grep4j.console.aggregators.AggregateMultitokensExpression;
 import org.grep4j.console.exception.Grep4jConsoleIllegalArgumentException;
-import org.grep4j.core.aggregator.AggregateMultitokensExpression;
 
 public class ExpressionParser extends InputParser<String> {
 

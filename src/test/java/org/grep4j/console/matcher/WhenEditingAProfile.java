@@ -1,11 +1,12 @@
 package org.grep4j.console.matcher;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
 import org.grep4j.console.ProfileEditorControl;
 import org.grep4j.console.parsers.ProfileEditorControlParser;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
 
 public class WhenEditingAProfile {
 

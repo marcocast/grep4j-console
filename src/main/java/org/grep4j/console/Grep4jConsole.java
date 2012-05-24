@@ -10,7 +10,7 @@ import java.util.List;
 import org.grep4j.console.parsers.ParsersHandler;
 import org.grep4j.console.profileeditor.ProfileEditorConsoleDialog;
 import org.grep4j.core.Grep4j;
-import org.grep4j.core.profile.model.Profile;
+import org.grep4j.core.model.Profile;
 
 public class Grep4jConsole {
 

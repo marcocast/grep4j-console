@@ -1,4 +1,4 @@
-package org.grep4j.console.matcher;
+package org.grep4j.console.matchers;
 
 import org.grep4j.console.ProfileEditorControl;
 import org.hamcrest.Description;
