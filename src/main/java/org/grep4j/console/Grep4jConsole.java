@@ -3,7 +3,7 @@ package org.grep4j.console;
 import static org.grep4j.console.printer.ConsolePrinter.printResult;
 import static org.grep4j.console.printer.UsagePrinter.printUsage;
 import static org.grep4j.core.Grep4j.Builder.grep;
-import static org.grep4j.core.Grep4j.Builder.on;
+import static org.grep4j.core.fluent.Dictionary.on;
 
 import java.util.List;
 
