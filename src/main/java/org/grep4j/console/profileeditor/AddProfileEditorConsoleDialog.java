@@ -1,6 +1,6 @@
 package org.grep4j.console.profileeditor;
 
-import org.grep4j.core.model.Profile;
+import org.grep4j.console.persistence.profiles.ConsoleProfile;
 import org.grep4j.core.model.ServerDetails;
 
 public class AddProfileEditorConsoleDialog extends ProfileEditorConsoleDialog {
@@ -9,7 +9,7 @@ public class AddProfileEditorConsoleDialog extends ProfileEditorConsoleDialog {
 	public void handleRequest(String profileName) {
 		if (console != null) {
 
-			Profile profile = generateProfile(profileName);
+			ConsoleProfile profile = generateProfile(profileName);
 
 			profile.setFileLocation(console.readLine("Please enter the fileTargetLocation [Example: /opt/jboss/server/] "));
 

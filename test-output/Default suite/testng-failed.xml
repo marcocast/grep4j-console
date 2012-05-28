@@ -7,10 +7,9 @@
         <methods>
           <include name="updateProfileTest"/>
           <include name="createSimpleProfile"/>
-          <include name="addProfileTest"/>
           <include name="removeProfileTest"/>
         </methods>
-      </class>
+      </class> <!-- org.grep4j.console.persistence.profiles.ProfileEditorTest -->
     </classes>
-  </test>
-</suite>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

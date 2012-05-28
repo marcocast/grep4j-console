@@ -6,23 +6,21 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.grep4j.core.model.Profile;
-
 @XmlRootElement
 public class Profiles {
 
-	private final List<Profile> profiles;
+	private final List<ConsoleProfile> profiles;
 
 	public Profiles() {
-		this.profiles = new ArrayList<Profile>();
+		this.profiles = new ArrayList<ConsoleProfile>();
 	}
 
-	public Profiles(List<Profile> profiles) {
+	public Profiles(List<ConsoleProfile> profiles) {
 		this.profiles = profiles;
 	}
 
 	@XmlElement(name = "profile")
-	public List<Profile> getProfiles() {
+	public List<ConsoleProfile> getProfiles() {
 		return profiles;
 	}
 

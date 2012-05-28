@@ -6,7 +6,7 @@ import java.io.Console;
 import java.io.PrintWriter;
 import java.util.List;
 
-import org.grep4j.core.model.Profile;
+import org.grep4j.console.persistence.profiles.ConsoleProfile;
 
 public class UsagePrinter {
 
@@ -18,8 +18,8 @@ public class UsagePrinter {
 			out.println("\tExpression");
 			out.println("\tProfiles[");
 			out.println("\t\t where options include: ");
-			List<Profile> profiles = profiles();
-			for (Profile profile : profiles) {
+			List<ConsoleProfile> profiles = profiles();
+			for (ConsoleProfile profile : profiles) {
 				out.println("\t\t\t" + profile.getName());
 			}
 			out.println("\t\t ] ");

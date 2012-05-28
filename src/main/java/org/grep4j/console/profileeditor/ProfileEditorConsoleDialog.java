@@ -7,7 +7,7 @@ import static org.grep4j.console.persistence.profiles.ProfileEditor.update;
 
 import java.io.Console;
 
-import org.grep4j.core.model.Profile;
+import org.grep4j.console.persistence.profiles.ConsoleProfile;
 
 public abstract class ProfileEditorConsoleDialog {
 
@@ -15,28 +15,28 @@ public abstract class ProfileEditorConsoleDialog {
 
 	public abstract void handleRequest(String profileName);
 
-	protected Profile generateProfile(String profileName) {
-		Profile profile = new Profile();
+	protected ConsoleProfile generateProfile(String profileName) {
+		ConsoleProfile profile = new ConsoleProfile();
 		profile.setName(profileName);
 		return profile;
 	}
 
-	protected boolean persistProfile(Profile profile) {
+	protected boolean persistProfile(ConsoleProfile profile) {
 		add(profile);
 		return true;
 	}
 
-	protected boolean removeProfile(Profile profile) {
+	protected boolean removeProfile(ConsoleProfile profile) {
 		remove(profile);
 		return true;
 	}
 
-	protected boolean updateProfile(Profile profile) {
+	protected boolean updateProfile(ConsoleProfile profile) {
 		update(profile);
 		return true;
 	}
 
-	protected Profile retrieveProfile(Profile profile) {
+	protected ConsoleProfile retrieveProfile(ConsoleProfile profile) {
 		return getProfile(profile);
 	}
 

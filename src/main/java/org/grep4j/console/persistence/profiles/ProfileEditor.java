@@ -13,8 +13,6 @@ import java.util.List;
 
 import javax.xml.bind.JAXB;
 
-import org.grep4j.core.model.Profile;
-
 /**
  * This class consists exclusively of static methods used to add modify delete and retrieve @see Profile.
  * 
@@ -31,14 +29,14 @@ public class ProfileEditor {
 	/**
 	 * @param profile
 	 */
-	public static void add(Profile profile) {
+	public static void add(ConsoleProfile profile) {
 		//check last separator
 		if (profile.getId() == null) {
 			if (profiles().size() == 0) {
 				profile.setId(1);
 			} else {
-				Integer maxIndex = ((Profile) selectMax(profiles(),
-						on(Profile.class).getId())).getId();
+				Integer maxIndex = ((ConsoleProfile) selectMax(profiles(),
+						on(ConsoleProfile.class).getId())).getId();
 				profile.setId(maxIndex + 1);
 			}
 		}
@@ -49,7 +47,7 @@ public class ProfileEditor {
 	/**
 	 * @param profile
 	 */
-	public static void remove(Profile profile) {
+	public static void remove(ConsoleProfile profile) {
 		profiles().remove(getProfile(profile));
 		persistProfileConfiguration();
 	}
@@ -65,9 +63,8 @@ public class ProfileEditor {
 	/**
 	 * @param profileToUpdate
 	 */
-	public static void update(Profile profileToUpdate) {
-		//check last separator
-		Profile profile = getProfile(profileToUpdate);
+	public static void update(ConsoleProfile profileToUpdate) {
+		ConsoleProfile profile = getProfile(profileToUpdate);
 		int index = profiles().indexOf(profile);
 		remove(profile);
 		profiles().add(index, profileToUpdate);
@@ -79,32 +76,32 @@ public class ProfileEditor {
 	 * @param profile
 	 * @return
 	 */
-	public static Profile getProfile(Profile profile) {
-		Profile result = null;
+	public static ConsoleProfile getProfile(ConsoleProfile profile) {
+		ConsoleProfile result = null;
 		if (profile.getId() != null) {
 			result = selectFirst(
 					profiles(),
-					having(on(Profile.class).getId(),
+					having(on(ConsoleProfile.class).getId(),
 							equalTo(profile.getId())));
 		} else if (profile.getName() != null) {
 			result = selectFirst(
 					profiles(),
-					having(on(Profile.class).getName(),
+					having(on(ConsoleProfile.class).getName(),
 							equalTo(profile.getName())));
 		}
 
 		return result;
 	}
 
-	/**
-	 * @return
-	 */
-	public static List<Profile> profiles() {
+	public static List<ConsoleProfile> profiles() {
 		return profileConfiguration().getProfiles();
 	}
 
 	protected static void persistProfileConfiguration() {
 
+		JAXB.marshal(new Profiles(profileConfiguration()
+				.getProfiles()), System.out);
+		
 		if (System.getProperty(ProfileEditor.SKIP_PERSIST_PROPERTY) != null) {
 			return;
 		}

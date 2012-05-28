@@ -1,13 +1,13 @@
 package org.grep4j.console.profileeditor;
 
-import org.grep4j.core.model.Profile;
+import org.grep4j.console.persistence.profiles.ConsoleProfile;
 
 public class ViewProfileEditorConsoleDialog extends ProfileEditorConsoleDialog {
 
 	@Override
 	public void handleRequest(String profileName) {
 		if (console != null) {
-			Profile profile = generateProfile(profileName);
+			ConsoleProfile profile = generateProfile(profileName);
 			console.printf(retrieveProfile(profile).toString());
 			console.writer().println();
 		}

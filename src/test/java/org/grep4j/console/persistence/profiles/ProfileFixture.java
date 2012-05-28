@@ -1,6 +1,5 @@
 package org.grep4j.console.persistence.profiles;
 
-import org.grep4j.core.model.Profile;
 import org.grep4j.core.model.ServerDetails;
 
 public class ProfileFixture {
@@ -8,8 +7,8 @@ public class ProfileFixture {
 	private ProfileFixture() {
 	}
 
-	public static Profile aSimpleProfile() {
-		Profile profile = new Profile();
+	public static ConsoleProfile aSimpleProfile() {
+		ConsoleProfile profile = new ConsoleProfile();
 
 		profile.setId(new Integer(1));
 		profile.setName("profile name");

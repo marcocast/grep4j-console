@@ -11,7 +11,6 @@ import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
 
-import org.grep4j.core.model.Profile;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -24,7 +23,7 @@ public class ProfileEditorTest {
 
 	private static final String PROFILE_NAME_TO_BE_UPDATED = "profile to be updated";
 
-	private Profile aProfile;
+	private ConsoleProfile aProfile;
 
 	@BeforeMethod
 	public void createSimpleProfile() {
@@ -52,9 +51,9 @@ public class ProfileEditorTest {
 
 	public void removeProfileTest() {
 
-		Profile profileToBeRemoved = selectFirst(
+		ConsoleProfile profileToBeRemoved = selectFirst(
 				profileConfiguration().getProfiles(),
-				having(on(Profile.class).getName(),
+				having(on(ConsoleProfile.class).getName(),
 						equalTo(PROFILE_NAME_TO_BE_DELETED)));
 
 		ProfileEditor.remove(profileToBeRemoved);
@@ -67,9 +66,9 @@ public class ProfileEditorTest {
 
 	public void updateProfileTest() {
 
-		Profile profileToBeUpdated = profileConfiguration()
+		ConsoleProfile profileToBeUpdated = profileConfiguration()
 				.getProfileBy(PROFILE_NAME_TO_BE_UPDATED);
-		Profile updatedProfile = new Profile();
+		ConsoleProfile updatedProfile = new ConsoleProfile();
 
 		updatedProfile.setName(NEW_PROFILE_NAME);
 		updatedProfile.setId(profileToBeUpdated.getId());

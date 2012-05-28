@@ -12,32 +12,25 @@ import java.util.List;
 
 import javax.xml.bind.JAXB;
 
-import org.grep4j.core.model.Profile;
-
 public class ProfileConfiguration {
 
-	public static final String SEPARATOR = System
-			.getProperty("file.separator");
+	public static final String SEPARATOR = File.separator;
 
 	public static final String PROFILES_CONFIGURATION_PROPERTY = "org.grep4j.profiles";
 
 	private static final String DEFAULT_CONFIGURATION_FOLDER = System
-			.getProperty("user.home")
-			+ SEPARATOR
-			+ ".grep4j";
+			.getProperty("user.home") + SEPARATOR + ".grep4j";
 
 	private static final String FULL_PATH_CONFIGURATION_FILE = DEFAULT_CONFIGURATION_FOLDER
-			+ SEPARATOR
-			+ "profiles.xml";
+			+ SEPARATOR + "profiles.xml";
 
 	private final Profiles profiles;
 
 	private final String profileFilename;
 
-	static ProfileConfiguration profileConfiguration;
+	protected static ProfileConfiguration profileConfiguration;
 
 	public static ProfileConfiguration profileConfiguration() {
-
 		if (profileConfiguration == null) {
 			profileConfiguration = new ProfileConfiguration();
 		}
@@ -48,23 +41,25 @@ public class ProfileConfiguration {
 		return profileFilename;
 	}
 
-	public List<Profile> getProfiles() {
+	public List<ConsoleProfile> getProfiles() {
 		return profiles.getProfiles();
 	}
 
-	public Profile getProfileBy(String name) {
+	public ConsoleProfile getProfileBy(String name) {
 		return selectFirst(profiles.getProfiles(),
-				having(on(Profile.class).getName(), equalTo(name)));
+				having(on(ConsoleProfile.class).getName(), equalTo(name)));
 	}
 
-	public Profile getProfileBy(int id) {
-		return selectFirst(profiles.getProfiles(),
-				having(on(Profile.class).getId(), equalTo(Integer.valueOf(id))));
+	public ConsoleProfile getProfileBy(int id) {
+		return selectFirst(
+				profiles.getProfiles(),
+				having(on(ConsoleProfile.class).getId(),
+						equalTo(Integer.valueOf(id))));
 	}
 
 	private ProfileConfiguration() {
 
-		createFolderIfDoesNotexistsYet();
+		verifyConfigFolder();
 
 		profileFilename = getConfigurationFileName();
 
@@ -76,7 +71,7 @@ public class ProfileConfiguration {
 
 	}
 
-	private void createFolderIfDoesNotexistsYet() {
+	private void verifyConfigFolder() {
 		File folder = new File(DEFAULT_CONFIGURATION_FOLDER);
 		if (!folder.exists()) {
 			folder.mkdir();
