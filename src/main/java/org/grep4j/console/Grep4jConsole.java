@@ -16,6 +16,9 @@ public class Grep4jConsole {
 
 	/**
 	 * Interface, this should be injected by a Springs
+	 * 
+	 * java -jar target/Grep4j-console-jar-with-dependencies.jar "'PP_OPENBET(.*)SELECTION(.*)CREATE(.*)54011274'" uat-phase-engine
+	 * 
 	 */
 	private final ParsersHandler parsersHandler;
 
@@ -65,6 +68,7 @@ public class Grep4jConsole {
 	}
 
 	private String expression() {
+		System.out.println(">>>>>>" + parsersHandler.getExpression() + "<<<<<<<<");
 		return parsersHandler.getExpression();
 	}
 

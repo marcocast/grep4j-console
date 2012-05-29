@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)" preserve-order="true">
     <classes>
-      <class name="org.grep4j.console.persistence.profiles.ProfileEditorTest">
+      <class name="org.grep4j.console.aggregators.AggregateMultitokensExpressionTest">
         <methods>
-          <include name="updateProfileTest"/>
-          <include name="createSimpleProfile"/>
-          <include name="removeProfileTest"/>
+          <include name="testMultiToken"/>
         </methods>
-      </class> <!-- org.grep4j.console.persistence.profiles.ProfileEditorTest -->
+      </class>
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test>
+</suite>

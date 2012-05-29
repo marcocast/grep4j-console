@@ -19,11 +19,11 @@ public class AggregateMultitokensExpression implements Aggregator<String> {
 			if (item == null)
 				continue;
 			expressionBuilder.append(item);
-			expressionBuilder.append(" ");
 			if (item.endsWith(MULITIPLE_TOKEN_DELIMITER)) {
 				expression = expressionBuilder.toString();
 				break;
 			}
+			expressionBuilder.append(" ");
 		}
 		return expression;
 	}
