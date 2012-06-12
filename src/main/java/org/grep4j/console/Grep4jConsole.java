@@ -2,14 +2,14 @@ package org.grep4j.console;
 
 import static org.grep4j.console.printer.ConsolePrinter.printResult;
 import static org.grep4j.console.printer.UsagePrinter.printUsage;
-import static org.grep4j.core.Grep4j.Builder.grep;
+import static org.grep4j.core.Grep4j.grep;
 import static org.grep4j.core.fluent.Dictionary.on;
+import static org.grep4j.core.fluent.Dictionary.with;
 
 import java.util.List;
 
 import org.grep4j.console.parsers.ParsersHandler;
 import org.grep4j.console.profileeditor.ProfileEditorConsoleDialog;
-import org.grep4j.core.Grep4j;
 import org.grep4j.core.model.Profile;
 
 public class Grep4jConsole {
@@ -47,16 +47,9 @@ public class Grep4jConsole {
 			ProfileEditorConsoleDialog consoleDialog = parsersHandler.getProfileEditorController().getProfileEditorConsoleDialog();
 			consoleDialog.handleRequest(parsersHandler.getProfileToCRUD());
 		} else {
-			Grep4j grep4j = grep(expression(), on(profiles()))
-					.withContextControls(getContextControls())
-					.withWildcard(getWildcard()).build();
-			printResult(grep4j.execute().andGetResults());
+			printResult(grep(expression(), on(profiles()), with(getContextControls())).getAllGrepResults());
 		}
 
-	}
-
-	private String getWildcard() {
-		return parsersHandler.getWildcard();
 	}
 
 	private List<String> getContextControls() {

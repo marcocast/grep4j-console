@@ -4,15 +4,15 @@ import static org.grep4j.console.persistence.profiles.ProfileConfiguration.profi
 
 import java.util.Set;
 
-import org.grep4j.core.task.GrepResult;
+import org.grep4j.core.result.SingleGrepResult;
 
 public class ConsolePrinter {
 
 	private final static String AROUND_HEADER = "************************************************";
 	private final static String AROUND_CONTENT = "					";
 
-	public static void printResult(Set<GrepResult> results) {
-		for (GrepResult result : results) {
+	public static void printResult(Set<SingleGrepResult> results) {
+		for (SingleGrepResult result : results) {
 			System.out.println(AROUND_HEADER + AROUND_HEADER + AROUND_HEADER);
 			System.out.println(AROUND_CONTENT + result.getProfileName() + " {" + result.getFileName() + " [" + hostFor(result) + "]}"
 					+ AROUND_CONTENT);
@@ -22,7 +22,7 @@ public class ConsolePrinter {
 
 	}
 
-	private static String hostFor(GrepResult result) {
+	private static String hostFor(SingleGrepResult result) {
 		return profileConfiguration().getProfileBy(result.getProfileName()).getServerDetails().getHost();
 	}
 
