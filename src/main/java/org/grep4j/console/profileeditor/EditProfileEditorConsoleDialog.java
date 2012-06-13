@@ -24,26 +24,32 @@ public class EditProfileEditorConsoleDialog extends ProfileEditorConsoleDialog {
 				profile.setFileName(input.trim());
 			}
 
+			input = console.readLine("Please enter the wildcard ["
+					+ profile.getWildcard() + "] ");
+			if (input != null && !input.isEmpty()) {
+				profile.setWildcard(input.trim());
+			}
+
 			ServerDetails serverDetails = profile.getServerDetails();
-			
+
 			input = console.readLine("Please enter the host ["
 					+ serverDetails.getHost() + "] ");
 			if (input != null && !input.isEmpty()) {
 				serverDetails.setHost(input.trim());
-			}		
-			
+			}
+
 			input = console.readLine("Please enter the user ["
 					+ serverDetails.getUser() + "] ");
 			if (input != null && !input.isEmpty()) {
 				serverDetails.setUser(input.trim());
 			}
-			
+
 			input = console.readLine("Please enter the password ["
 					+ serverDetails.getPassword() + "] ");
 			if (input != null && !input.isEmpty()) {
 				serverDetails.setPassword(input.trim());
 			}
-			
+
 			updateProfile(profile);
 
 			console.printf("profile " + profileName + " has been UPDATED");

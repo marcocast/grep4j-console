@@ -15,6 +15,8 @@ public class AddProfileEditorConsoleDialog extends ProfileEditorConsoleDialog {
 
 			profile.setFileName(console.readLine("Please enter the fileTargetName [Example: server.log] "));
 
+			profile.setWildcard(console.readLine("Please enter the wildcard [Example: *] "));
+
 			ServerDetails serverDetails = new ServerDetails();
 
 			serverDetails.setHost(console.readLine("Please enter the host [Example: 172.xx.xx.xx] "));
