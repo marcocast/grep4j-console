@@ -8,8 +8,8 @@ import ch.lambdaj.function.convert.PropertyExtractor;
 
 public class ProfileConverter extends PropertyExtractor<String, Profile> {
 
-	public ProfileConverter(String propertyName) {
-		super(propertyName);
+	public ProfileConverter() {
+		super("ProfileConverter");
 	}
 
 	@Override

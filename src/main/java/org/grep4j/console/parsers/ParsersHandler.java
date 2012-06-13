@@ -8,6 +8,7 @@ import java.util.List;
 import org.grep4j.console.ProfileEditorControl;
 import org.grep4j.console.converters.ProfileConverter;
 import org.grep4j.core.model.Profile;
+import org.grep4j.core.options.ExtraLines;
 
 public class ParsersHandler {
 
@@ -16,7 +17,7 @@ public class ParsersHandler {
 	 */
 	private final InputParser<String> expressionParser;
 	private final InputParser<List<String>> profileParser;
-	private final InputParser<List<String>> contextControllerParser;
+	private final InputParser<List<ExtraLines>> contextControllerParser;
 	private final InputParser<String> wildcardParser;
 	private final InputParser<ProfileEditorControl> profileEditorControllerParser;
 	private final InputParser<String> profileToCRUDParser;
@@ -45,10 +46,10 @@ public class ParsersHandler {
 	}
 
 	public List<Profile> getProfiles() {
-		return convert(selectDistinct(profiles()), new ProfileConverter("server name"));
+		return convert(selectDistinct(profiles()), new ProfileConverter());
 	}
 
-	public List<String> getContextControls() {
+	public List<ExtraLines> getContextControls() {
 		return contextControllerParser.parse(args);
 	}
 
