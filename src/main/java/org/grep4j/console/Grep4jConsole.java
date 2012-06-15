@@ -47,7 +47,7 @@ public class Grep4jConsole {
 			ProfileEditorConsoleDialog consoleDialog = parsersHandler.getProfileEditorController().getProfileEditorConsoleDialog();
 			consoleDialog.handleRequest(parsersHandler.getProfileToCRUD());
 		} else {
-			printResult(grep(expression(), on(profiles()), getContextControls()).getAllGrepResults());
+			printResult(grep(expression(), on(profiles()), getContextControls()));
 		}
 	}
 
