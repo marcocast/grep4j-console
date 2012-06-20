@@ -1,7 +1,7 @@
 package org.grep4j.console.profileeditor;
 
 import org.grep4j.console.persistence.profiles.ConsoleProfile;
-import org.grep4j.core.model.ServerDetails;
+import org.grep4j.console.persistence.profiles.ConsoleServerDetails;
 
 public class AddProfileEditorConsoleDialog extends ProfileEditorConsoleDialog {
 
@@ -11,13 +11,11 @@ public class AddProfileEditorConsoleDialog extends ProfileEditorConsoleDialog {
 
 			ConsoleProfile profile = generateProfile(profileName);
 
-			profile.setFileLocation(console.readLine("Please enter the fileTargetLocation [Example: /opt/jboss/server/] "));
-
-			profile.setFileName(console.readLine("Please enter the fileTargetName [Example: server.log] "));
+			profile.setFilePath(console.readLine("Please enter the file path [Example: /opt/jboss/server/default/server.log] "));
 
 			profile.setWildcard(console.readLine("Please enter the wildcard [Example: *] "));
 
-			ServerDetails serverDetails = new ServerDetails();
+			ConsoleServerDetails serverDetails = new ConsoleServerDetails();
 
 			serverDetails.setHost(console.readLine("Please enter the host [Example: 172.xx.xx.xx] "));
 

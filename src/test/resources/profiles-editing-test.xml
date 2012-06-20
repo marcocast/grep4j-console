@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profiles>
     <profile name="profile to be deleted" id="2">
-        <fileLocation>target location</fileLocation>
-        <fileName>target name</fileName>
+        <filePath>target location/target name</filePath>
         <serverDetails>
             <host>hostname</host>
             <password>password</password>
@@ -10,8 +9,7 @@
         </serverDetails>
     </profile>
     <profile name="profile to be updated" id="3">
-        <fileLocation>target location</fileLocation>
-        <fileName>target name</fileName>
+        <filePath>target location/target name</filePath>
         <serverDetails>
             <host>hostname</host>
             <password>password</password>

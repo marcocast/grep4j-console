@@ -72,10 +72,8 @@ public class ProfileEditorTest {
 
 		updatedProfile.setName(NEW_PROFILE_NAME);
 		updatedProfile.setId(profileToBeUpdated.getId());
-		updatedProfile.setFileLocation(profileToBeUpdated
-				.getFileLocation());
-		updatedProfile
-				.setFileName(profileToBeUpdated.getFileName());
+		updatedProfile.setFilePath(profileToBeUpdated
+				.getFilePath());
 		updatedProfile.setServerDetails(profileToBeUpdated.getServerDetails());
 
 		ProfileEditor.update(updatedProfile);

@@ -1,7 +1,7 @@
 package org.grep4j.console.profileeditor;
 
 import org.grep4j.console.persistence.profiles.ConsoleProfile;
-import org.grep4j.core.model.ServerDetails;
+import org.grep4j.console.persistence.profiles.ConsoleServerDetails;
 
 public class EditProfileEditorConsoleDialog extends ProfileEditorConsoleDialog {
 
@@ -12,16 +12,10 @@ public class EditProfileEditorConsoleDialog extends ProfileEditorConsoleDialog {
 			ConsoleProfile profile = retrieveProfile(generateProfile(profileName));
 
 			String input = console
-					.readLine("Please enter the fileTargetLocation ["
-							+ profile.getFileLocation() + "] ");
+					.readLine("Please enter the file Path ["
+							+ profile.getFilePath() + "] ");
 			if (input != null && !input.isEmpty()) {
-				profile.setFileLocation(input.trim());
-			}
-
-			input = console.readLine("Please enter the fileTargetName ["
-					+ profile.getFileName() + "] ");
-			if (input != null && !input.isEmpty()) {
-				profile.setFileName(input.trim());
+				profile.setFilePath(input.trim());
 			}
 
 			input = console.readLine("Please enter the wildcard ["
@@ -30,7 +24,7 @@ public class EditProfileEditorConsoleDialog extends ProfileEditorConsoleDialog {
 				profile.setWildcard(input.trim());
 			}
 
-			ServerDetails serverDetails = profile.getServerDetails();
+			ConsoleServerDetails serverDetails = profile.getServerDetails();
 
 			input = console.readLine("Please enter the host ["
 					+ serverDetails.getHost() + "] ");

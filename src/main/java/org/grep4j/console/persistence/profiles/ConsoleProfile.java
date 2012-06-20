@@ -2,11 +2,13 @@ package org.grep4j.console.persistence.profiles;
 
 import javax.xml.bind.annotation.XmlAttribute;
 
-import org.grep4j.core.model.Profile;
-
-public class ConsoleProfile extends Profile {
+public class ConsoleProfile {
 
 	private Integer id;
+	private String name;
+	private String filePath;
+	private ConsoleServerDetails serverDetails;
+	private String wildcard;
 
 	@XmlAttribute
 	public Integer getId() {
@@ -18,14 +20,36 @@ public class ConsoleProfile extends Profile {
 	}
 
 	@XmlAttribute
-	@Override
 	public String getName() {
-		return super.getName();
+		return this.name;
 	}
 
-	@Override
 	public void setName(String name) {
-		super.setName(name);
+		this.name = name;
+	}
+
+	public String getFilePath() {
+		return filePath;
+	}
+
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+
+	public ConsoleServerDetails getServerDetails() {
+		return serverDetails;
+	}
+
+	public void setServerDetails(ConsoleServerDetails serverDetails) {
+		this.serverDetails = serverDetails;
+	}
+
+	public String getWildcard() {
+		return wildcard;
+	}
+
+	public void setWildcard(String wildcard) {
+		this.wildcard = wildcard;
 	}
 
 	@Override
@@ -51,6 +75,11 @@ public class ConsoleProfile extends Profile {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "ConsoleProfile [name=" + name + ", filePath=" + filePath + ", wildcard=" + wildcard + ", serverDetails=" + serverDetails + "]";
 	}
 
 }
