@@ -1,7 +1,7 @@
 package org.grep4j.console.converters;
 
-import static org.grep4j.core.options.ExtraLines.extraLinesAfter;
-import static org.grep4j.core.options.ExtraLines.extraLinesBefore;
+import static org.grep4j.core.Grep4j.extraLinesAfter;
+import static org.grep4j.core.Grep4j.extraLinesBefore;
 
 import org.grep4j.console.exception.Grep4jConsoleIllegalArgumentException;
 import org.grep4j.core.options.ExtraLines;
