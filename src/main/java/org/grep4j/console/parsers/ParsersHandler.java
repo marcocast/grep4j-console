@@ -18,7 +18,6 @@ public class ParsersHandler {
 	private final InputParser<String> expressionParser;
 	private final InputParser<List<String>> profileParser;
 	private final InputParser<List<ExtraLines>> contextControllerParser;
-	private final InputParser<String> wildcardParser;
 	private final InputParser<ProfileEditorControl> profileEditorControllerParser;
 	private final InputParser<String> profileToCRUDParser;
 	private final String[] args;
@@ -28,7 +27,6 @@ public class ParsersHandler {
 		this.expressionParser = new ExpressionParser();
 		this.profileParser = new ProfileParser();
 		this.contextControllerParser = new ContextControlParser();
-		this.wildcardParser = new WildcardParser();
 		this.profileEditorControllerParser = new ProfileEditorControlParser();
 		this.profileToCRUDParser = new ProfileToCRUDParser();
 	}
@@ -51,10 +49,6 @@ public class ParsersHandler {
 
 	public List<ExtraLines> getContextControls() {
 		return contextControllerParser.parse(args);
-	}
-
-	public String getWildcard() {
-		return wildcardParser.parse(args);
 	}
 
 	public ProfileEditorControl getProfileEditorController() {

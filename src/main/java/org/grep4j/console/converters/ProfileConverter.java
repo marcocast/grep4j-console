@@ -18,7 +18,6 @@ public class ProfileConverter extends PropertyExtractor<String, Profile> {
 	public Profile convert(String profileName) {
 		ConsoleProfile consoleProfile = profileConfiguration().getProfileBy(profileName);
 		Profile profile = new Profile(consoleProfile.getName(), consoleProfile.getFilePath());
-		profile.setWildcard(consoleProfile.getWildcard());
 		ServerDetails serverDetails = new ServerDetails(consoleProfile.getServerDetails().getHost());
 		serverDetails.setPassword(consoleProfile.getServerDetails().getPassword());
 		serverDetails.setUser(consoleProfile.getServerDetails().getUser());

@@ -28,10 +28,6 @@ public class UsagePrinter {
 			out.println("\t\t\t -B, --before-context=NUM ");
 			out.println("\t\t\t -A, --after-context=NUM ");
 			out.println("\t\t ] ");
-			out.println("\tlog date[ ");
-			out.println("\t\t where options include: ");
-			out.println("\t\t\t -W, --wildcard of the file name (Example: for dates -W2012-04-25-17 or -W* for any file) =WILDCARD");
-			out.println("\t\t ] ");
 			out.println("\tEditing profiles[ ");
 			out.println("\t\t where options include: ");
 			out.println("\t\t\t -ADD profileName");
